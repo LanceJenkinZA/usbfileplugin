@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com-jenkin-plugins-usbfile" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>UsbFilePlugin</name>
+    <description>Access files on a USB device</description>
+    <license>MIT</license>
+    <keywords>cordova,usb,file</keywords>
+
+    <framework src="com.github.mjdev:libaums:0.5.2" />
+    <platform name="android">
+        <config-file target="config.xml" parent="/*">
+            <feature name="UsbFilePlugin">
+                <param name="android-package"
+                       value="com.jenkin.plugin.UsbFilePlugin"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/com/jenkin/plugin/UsbFilePlugin.java"
+                     target-dir="src/com/jenkin/plugin" />
+    </platform>
+
+    <js-module name="UsbFile" src="www/UsbFile.js">
+        <clobbers target="cordova.plugins.UsbFile" />
+    </js-module>
+
+</plugin>
