@@ -193,6 +193,8 @@ public class UsbFilePlugin extends CordovaPlugin {
      * @throws IOException Error thrown if there is a problem reading a file.
      */
     private void listDir(String dirName, CallbackContext callbackContext) throws JSONException, IOException {
+        Log.d(TAG, "Listing directory: " + dirName);
+        
         if (massStorageDevice == null) {
             callbackContext.error("Device not set up");
             return;
@@ -211,7 +213,7 @@ public class UsbFilePlugin extends CordovaPlugin {
         }else{
             path = root;
         }
-        
+
         JSONArray fileList = new JSONArray();
 
         UsbFile[] files = path.listFiles();
