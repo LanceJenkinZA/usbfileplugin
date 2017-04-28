@@ -204,6 +204,9 @@ public class UsbFilePlugin extends CordovaPlugin {
         UsbFile root = currentFs.getRootDirectory();
         UsbFile path;
 
+        if(dirName.startsWith("/")){
+            dirName = dirName.substring(1);
+        }
         if (!dirName.equals("")){
             path = root.search(dirName);
             if (path == null) {
@@ -250,6 +253,9 @@ public class UsbFilePlugin extends CordovaPlugin {
 
         FileSystem currentFs = massStorageDevice.getPartitions().get(0).getFileSystem();
         UsbFile root = currentFs.getRootDirectory();
+        if(fileName.startsWith("/")){
+            fileName = fileName.substring(1);
+        }
         UsbFile file = root.search(fileName);
         if (file == null) {
             callbackContext.error("Could not find file");
