@@ -200,12 +200,18 @@ public class UsbFilePlugin extends CordovaPlugin {
         FileSystem currentFs = massStorageDevice.getPartitions().get(0).getFileSystem();
 
         UsbFile root = currentFs.getRootDirectory();
-        UsbFile path = root.search(dirName);
-        if (path == null) {
-            callbackContext.error("Couldn't find path");
-            return;
-        }
+        UsbFile path;
 
+        if (dirName != ""){
+            path = root.search(dirName);
+            if (path == null) {
+                callbackContext.error("Couldn't find path");
+                return;
+            }
+        }else{
+            path = root;
+        }
+        
         JSONArray fileList = new JSONArray();
 
         UsbFile[] files = path.listFiles();
