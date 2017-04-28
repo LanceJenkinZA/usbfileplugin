@@ -194,7 +194,7 @@ public class UsbFilePlugin extends CordovaPlugin {
      */
     private void listDir(String dirName, CallbackContext callbackContext) throws JSONException, IOException {
         Log.d(TAG, "Listing directory: " + dirName);
-        
+
         if (massStorageDevice == null) {
             callbackContext.error("Device not set up");
             return;
@@ -204,7 +204,7 @@ public class UsbFilePlugin extends CordovaPlugin {
         UsbFile root = currentFs.getRootDirectory();
         UsbFile path;
 
-        if (dirName != ""){
+        if (!dirName.equals("")){
             path = root.search(dirName);
             if (path == null) {
                 callbackContext.error("Couldn't find path");
