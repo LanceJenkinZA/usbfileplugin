@@ -1,4 +1,5 @@
 {
     "name": "USBFilePlugin",
-    "author": "Lance Jenkin"
+    "author": "Lance Jenkin",
+    "version": "0.0.1"
 }
