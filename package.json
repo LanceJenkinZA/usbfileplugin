@@ -1,5 +1,28 @@
 {
-    "name": "USBFilePlugin",
-    "author": "Lance Jenkin",
-    "version": "0.0.1"
+  "name": "com-jenkin-plugins-usbfile",
+  "version": "0.0.2
+  "description": "USBFilePlugin",
+  "cordova": {
+    "id": "cordova-plugin-device",
+    "platforms": [
+      "android",
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LanceJenkinZA/cordova-plugin-app-update"
+  },
+  "keywords": [
+    "cordova",
+    "device",
+  ],
+  "author": "Lance Jenkin",
+  "license": "Apache-2.0",
+  "engines": {
+    "cordovaDependencies": {
+      "3.0.0": {
+        "cordova": ">100"
+      }
+    }
+  },
 }
