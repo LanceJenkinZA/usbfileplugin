@@ -1,6 +1,6 @@
 {
   "name": "com-jenkin-plugins-usbfile",
-  "version": "0.0.2,
+  "version": "0.0.2",
   "description": "USBFilePlugin",
   "cordova": {
     "id": "cordova-plugin-device",
