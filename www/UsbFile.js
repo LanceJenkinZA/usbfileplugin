@@ -32,3 +32,15 @@ exports.listDir = function(dirName, success, error) {
 exports.readAsText = function(fileName, success, error) {
     exec(success, error, "UsbFilePlugin", "readAsText", [fileName]);
 };
+
+
+/**
+ * Check if the file name exists on the USB device
+ * 
+ * @param fileName The full path to check
+ * @param success The success callback
+ * @param error The error callback
+ */
+exports.exists = function(fileName, success, error) {
+    exec(success, error, "UsbFilePlugin", "exists", [fileName]);
+}
