@@ -28,6 +28,7 @@ import com.github.mjdev.libaums.fs.FileSystemFactory;
 import com.github.mjdev.libaums.fs.UsbFile;
 import com.github.mjdev.libaums.fs.UsbFileStreamFactory;
 
+import com.github.magnusja.libaums.javafs.JavaFsFileSystemCreator;
 
 /**
  * Plugin to communicate with USB devices.
@@ -129,7 +130,7 @@ public class UsbFilePlugin extends CordovaPlugin {
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
-
+        FileSystemFactory.registerFileSystem(JavaFsFileSystemCreator())
         Context context = this.cordova.getActivity().getApplicationContext();
         IntentFilter filter = new IntentFilter(ACTION_USB_PERMISSION);
         filter.addAction(UsbManager.ACTION_USB_DEVICE_ATTACHED);
