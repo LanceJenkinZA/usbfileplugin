@@ -19,17 +19,17 @@
                      target-dir="src/com/jenkin/plugin" />
 
         <source-file src="src/android/com/github/magnusja/libaums/javafs/JavaFsFileSystemCreator.java"
-                    target-dir="src/android/com/github/magnusja/libaums/javafs">
+                    target-dir="src/android/com/github/magnusja/libaums/javafs" />
 
         <source-file src="src/android/com/github/magnusja/libaums/javafs/wrapper/device/DeviceWrapper.java"
-                    target-dir="src/android/com/github/magnusja/libaums/javafs/wrapper/device">
+                    target-dir="src/android/com/github/magnusja/libaums/javafs/wrapper/device"/>
         <source-file src="src/android/com/github/magnusja/libaums/javafs/FSBlockDeviceWrapper.java"
-                    target-dir="src/android/com/github/magnusja/libaums/javafs/wrapper/device">
+                    target-dir="src/android/com/github/magnusja/libaums/javafs/wrapper/device"/>
 
         <source-file src="src/android/com/github/magnusja/libaums/javafs/wrapper/fs/FileSystemWrapper.java"
-                target-dir="src/android/com/github/magnusja/libaums/javafs/wrapper/fs">
+                target-dir="src/android/com/github/magnusja/libaums/javafs/wrapper/fs"/>
         <source-file src="src/android/com/github/magnusja/libaums/javafs/wrapper/fs/UsbFileWrapper.java"
-                target-dir="src/android/com/github/magnusja/libaums/javafs/wrapper/fs">
+                target-dir="src/android/com/github/magnusja/libaums/javafs/wrapper/fs"/>
     </platform>
 
     <js-module name="UsbFile" src="www/UsbFile.js">
