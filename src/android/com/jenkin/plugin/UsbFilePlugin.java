@@ -182,36 +182,9 @@ public class UsbFilePlugin extends CordovaPlugin {
             return true;
         }
 
-        if ("exists".equals(action)) {
-            try {
-                exists(args.getString(0), callbackContext);
-            } catch (Exception e) {
-                callbackContext.error("Error checking file: " + e.getMessage());
-            }
-
-            return true;
-        }
-
         return false;
     }
 
-    private void exists(String fileName, CallbackContext callbackContext) throws JSONException, IOException {
-        Log.d(TAG, "Checking if file exists: " + fileName);
-
-        if(massStorageDevice == null){
-            callbackContext.error("Device not set up");
-            return;
-        }
-
-        FileSystem currentFs = massStorageDevice.getPartitions().get(0).getFileSystem();
-        UsbFile root = currentFs.getRootDirectory();
-        if(fileName.startsWith("/")){
-            fileName = fileName.substring(1);
-        }
-        UsbFile file = root.search(fileName);
-
-        callbackContext.success(file != null);
-    }
 
     /**
      * List directory on the mass storage device.
