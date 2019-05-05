@@ -23,7 +23,7 @@
 
         <source-file src="src/android/com/github/magnusja/libaums/javafs/wrapper/device/DeviceWrapper.java"
                     target-dir="src/android/com/github/magnusja/libaums/javafs/wrapper/device"/>
-        <source-file src="src/android/com/github/magnusja/libaums/javafs/FSBlockDeviceWrapper.java"
+        <source-file src="src/android/com/github/magnusja/libaums/javafs/wrapper/device/FSBlockDeviceWrapper.java"
                     target-dir="src/android/com/github/magnusja/libaums/javafs/wrapper/device"/>
 
         <source-file src="src/android/com/github/magnusja/libaums/javafs/wrapper/fs/FileSystemWrapper.java"
