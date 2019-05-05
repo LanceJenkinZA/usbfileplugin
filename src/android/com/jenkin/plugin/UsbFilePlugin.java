@@ -130,7 +130,7 @@ public class UsbFilePlugin extends CordovaPlugin {
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
-        FileSystemFactory.registerFileSystem(JavaFsFileSystemCreator())
+        FileSystemFactory.registerFileSystem(JavaFsFileSystemCreator());
         Context context = this.cordova.getActivity().getApplicationContext();
         IntentFilter filter = new IntentFilter(ACTION_USB_PERMISSION);
         filter.addAction(UsbManager.ACTION_USB_DEVICE_ATTACHED);
