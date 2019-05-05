@@ -5,7 +5,9 @@
     <license>MIT</license>
     <keywords>cordova,usb,file</keywords>
 
-    <framework src="com.github.mjdev:libaums:0.5.2" />
+    <framework src="com.github.mjdev:libaums:0.6.0" />
+    <framework src="com.github.magnusja:java-fs:v0.1.2" />
+
     <platform name="android">
         <config-file target="config.xml" parent="/*">
             <feature name="UsbFilePlugin">
