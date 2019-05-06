@@ -131,11 +131,13 @@ public class UsbFilePlugin extends CordovaPlugin {
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
         FileSystemFactory.registerFileSystem(new JavaFsFileSystemCreator());
+
         Context context = this.cordova.getActivity().getApplicationContext();
         IntentFilter filter = new IntentFilter(ACTION_USB_PERMISSION);
         filter.addAction(UsbManager.ACTION_USB_DEVICE_ATTACHED);
         filter.addAction(UsbManager.ACTION_USB_DEVICE_DETACHED);
         context.registerReceiver(usbReceiver, filter);
+
         discoverDevice();
     }
 
@@ -201,9 +203,13 @@ public class UsbFilePlugin extends CordovaPlugin {
             callbackContext.error("Device not set up");
             return;
         }
-        FileSystem currentFs = massStorageDevice.getPartitions().get(0).getFileSystem();
+
+        java.nio.file.FileSystem currentFs = massStorageDevice.getPartitions().get(0).getFileSystem();
+        Log.d(TAG, "Got current filesystem: " + currentFs.getClass());
 
         UsbFile root = currentFs.getRootDirectory();
+        Log.d(TAG, "Got root directory");
+
         UsbFile path;
 
         if(dirName.startsWith("/")){
@@ -222,6 +228,7 @@ public class UsbFilePlugin extends CordovaPlugin {
         JSONArray fileList = new JSONArray();
 
         UsbFile[] files = path.listFiles();
+        Log.d(TAG, "Got files: " + files.length);;
         for (UsbFile file : files) {
             JSONObject fileObject = new JSONObject();
             fileObject.put("name", file.getName());
