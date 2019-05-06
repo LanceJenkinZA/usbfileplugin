@@ -224,11 +224,6 @@ public class UsbFileWrapper extends AbstractUsbFile {
 
     @Override
     public boolean isRoot() {
-        try {
-            return entry.getId().equals(entry.getFileSystem().getRootEntry().getId());
-        } catch (IOException e) {
-            Log.e(TAG, "error checking id for determining root", e);
-            return false;
-        }
+      return getName().length() == 0;
     }
 }
