@@ -5,6 +5,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Arrays;
 
 import android.app.Activity;
 import android.app.PendingIntent;
@@ -277,7 +278,7 @@ public class UsbFilePlugin extends CordovaPlugin {
         byte[] buffer = new byte[4096];
         int count;
         while ((count = is.read(buffer)) != -1) {
-            fileContents = fileContents.concat(new String(buffer));
+            fileContents = fileContents.concat(new String(Arrays.copyOfRange(buffer, 0, count)));
         }
 
         callbackContext.success(fileContents);
