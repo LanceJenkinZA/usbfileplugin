@@ -224,11 +224,12 @@ public class UsbFilePlugin extends CordovaPlugin {
         }else{
             path = root;
         }
+        Log.d(TAG, "Got path: " + files.length);
 
         JSONArray fileList = new JSONArray();
 
         UsbFile[] files = path.listFiles();
-        Log.d(TAG, "Got files: " + files.length);;
+        Log.d(TAG, "Got files: " + files.length);
         for (UsbFile file : files) {
             JSONObject fileObject = new JSONObject();
             fileObject.put("name", file.getName());
