@@ -204,7 +204,7 @@ public class UsbFilePlugin extends CordovaPlugin {
             return;
         }
 
-        java.nio.file.FileSystem currentFs = massStorageDevice.getPartitions().get(0).getFileSystem();
+        FileSystem currentFs = massStorageDevice.getPartitions().get(0).getFileSystem();
         Log.d(TAG, "Got current filesystem: " + currentFs.getClass());
 
         UsbFile root = currentFs.getRootDirectory();
