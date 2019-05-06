@@ -7,9 +7,7 @@
 
     <framework src="com.github.mjdev:libaums:0.6.0" />
     <framework src="com.github.magnusja:java-fs:v0.1.2" />
-    <framework src="log4j:log4j:1.2.17" />
-    <framework src="de.mindpipe.android:android-logging-log4j:1.0.3" />
-
+    
     <platform name="android">
         <config-file target="config.xml" parent="/*">
             <feature name="UsbFilePlugin">
